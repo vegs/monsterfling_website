@@ -1,0 +1,22 @@
+<div class="mainContent">
+	<div class="blogContainer">
+	    <div ng-repeat="post in blogPosts" class="blogPostContainer">
+	      	<div class="blogPost">
+		        <p class="title">{{ post.title | uppercase }}</p>
+		        <p class="date">{{ post.timePosted | date:'longdate' }}
+				<p class="content" ng-bind-html="post.content | to_trusted"></p>
+				<p class="author">Posted by <span>{{post.author.username}}</span></p>       
+	      	</div>
+
+	      	<!-- COMMENTS -->
+	      	<div class="commentSection" ng-repeat="comment in post.comments">
+	      		<div class="comment">
+	      			<p class="username">{{ comment.author.username }}</p>
+		        	<p class="date">{{ comment.timePosted | date:'longdate' }}
+					<p class="content"> {{comment.content}} </p>
+				</div>
+			</div>
+	    </div>
+    </div>
+    <div ng-bind-html="testhtml | to_trusted"></div>
+</div>

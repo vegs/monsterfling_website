@@ -1,0 +1,37 @@
+<div class="mainContent">
+  <div class="summary">
+    {{introText}}
+  </div>
+  <div class="mailSection" style="text-align: center;">
+    <p class="mailPromo">{{mailPromoText}}</p>
+    <form style="text-align: center; width: 100%;">
+      <div class="form-group" style="text-align: center; width: 50%; min-width: 300px; margin:auto;">
+<!--                 <label for="usr">Username:</label>
+        <input type="text" class="form-control" id="form-usr"> 
+        <label for="email">Email:</label> -->
+        <input id="form-email" type="email" class="form-control" placeholder="mail@example.com" onfocus="this.placeholder = ''" onblur="this.placeholder = 'mail@example.com'"><br>
+        <button id="register-button" class="btn btn-success" onClick="ajax_addEmail()">REGISTER</button>
+        <p id="response-register" style="color: #7DBE40; font-size:150%; display: none;"><i class="fa fa-check-circle-o"></i><span> Success!</span><br><span style="font-size: 70%;">Your email has been registered and we will keep you updated!</span></p>
+
+        <button id="mailAll-button" class="btn btn-danger" onClick="ajax_mailAll()">SEND ALL</button>
+        <p id="response-mailAll"></p>
+      </div>
+    </form>
+  </div>
+
+<!--   <div class="preamble">
+    <div ng-repeat="product in products" class="preamble">
+      <div class="thumbnail">
+        <img ng-src="{{ product.cover }}">
+        <p class="title">{{ product.name | uppercase }}</p>
+        <p class="price">{{ product.price | currency }}</p>
+        <p class="date">{{ product.pubdate | date }}
+        	<div class="rating">
+            <p class="likes" ng-click="plusOne($index)">+ {{ product.likes }} </p>
+            <p class="dislikes" ng-click="minusOne($index)">- {{ product.dislikes }} </p>
+        	</div>
+        </p>
+      </div>
+    </div>
+  </div> -->
+</div>

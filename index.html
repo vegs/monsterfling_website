@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Imported Stylesheets -->
+    <link href="https://s3.amazonaws.com/codecademy-content/projects/bootstrap.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:500,300,700,400' rel='stylesheet' type='text/css'>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- My Stylesheets -->
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/navbar.css" rel="stylesheet" />
+    <link href="css/home.css" rel="stylesheet" />
+    <link href="css/blog.css" rel="stylesheet" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Imported Scripts -->
+    <script src="js/shared/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><!-- LINKS WITH # DOESN'T WORK WITH JQUERY ???-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/MainController.js"></script>
+    <script src="js/controllers/BlogController.js"></script>
+
+    <!-- Services -->
+    <script src="js/services/blogPosts.js"></script>
+    <script src="js/services/blogPostComments.js"></script>
+    
+    <!-- Ajax Scripts -->
+    <script src="js/ajax/ajax.js"></script>
+
+    <!-- JQuery Scripts -->
+    <script src="js/jquery/navbar.js"></script>
+
+    <!-- Site specific -->
+
+  </head>
+  <body ng-app="myApp">
+
+    <div class="main" id="main" ng-controller="MainController"> 
+      
+      <div class="topPart">
+        <div class="banner" style="background: url('{{banner}}') no-repeat">
+          <a href="#/"><img class="logo" ng-src="{{ logo }}" ></a>
+        </div>
+      
+        <nav id='nav_bar'>
+          <ul class='nav_links'>
+            <div class="left">
+<!--               <a href=""><div class="menuElementContainer"><li><div class="navcontainer"></div></li></div></a>
+              <a href=""><div class="menuElementContainer"><li><div class="navcontainer"></div></li></div></a>
+              <a href="#/blog#main"><div class="menuElementContainer"><li><div class="navcontainer" style="color: deepskyblue; text-align: right;">Blog</div></li></div></a> -->
+            </div>
+            <div class="middle">
+              <a href="http://monsterfling.herobo.com/#/blog#main"><div class="menuElementContainer" style="font-size:130%;"><li class="normal"><div class="navcontainer hover_big" style="color: #F0C75E; text-align: left;">Blog</div></li></div></a>
+              <a href="#main"><div class="menuElementContainer nav_img" id="nav_logobutton"><li class="normal"><div class="navcontainer hover_big"><img id="nav_logo" class="nav_img" ng-src="{{ logo }}" hidden="true"/></div></li></div></a>
+              <a href=""><div class="menuElementContainer"><li class="normal"><div class="navcontainer"></div></li></div></a>
+            </div>
+            <div class="right">
+              <a href="javascript:window.location.reload()"><div class="menuElementContainer"><li class="normal"><div class="navcontainer hover_big">Log In</div></li></div></a>
+              <div class="menuElementContainer"><li><div class="navcontainer" style:hover="font-size:100%;">
+
+                <div class="dropdown">
+                  <button class="dropdown  dropdown-toggle" type="button" data-toggle="dropdown">Menu
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                  </ul>
+                </div>
+              </div></li></div>
+
+            </div>
+          </ul>
+        </nav>
+        <div style="background-color: white; height:2000px;"></div>
+      </div>
+
+      
+      <div class="middlePart" style="background: url('{{mainBackground}}') repeat">
+        <div ng-view></div>
+      </div>
+    </div>
+
+
+
+
+  </body>
+</html>
